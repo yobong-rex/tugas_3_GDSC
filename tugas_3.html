@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .search{
+            display: inline-block;
+            width:90%;
+            font-size: 16px;
+            margin-bottom: 2vh;
+        }
+        .search-button{
+            border-radius: 10px;
+            padding: 5px 15px;
+        }
+        .container{
+            width: 70%;
+            margin: auto;
+            padding: 2% 1%;
+            display: flex;
+            flex-wrap: wrap;
+            border: 1px solid #CCCCCC;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); 
+        }
+        .contain{
+            flex-grow: 85;
+            flex-basis: 85%;
+        }
+        .header{
+            font-size: 24px;
+            margin: 0% 0% 1% 1%;
+        }
+
+        .movie-box {
+            border: 1px solid #CCCCCC;
+            padding: 1%;
+            margin: 1%;
+            height: 400px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
+            text-decoration: none;
+            color: black;
+            transition: 0.4s;
+        }
+        .movie-title {
+            margin: 5% 0;
+            font-size: 18px;
+            font-family: sans-serif;
+            font-weight: bold;
+        }
+        .movie-description {
+            font-size: 13px;
+            font-family: sans-serif;
+            line-height: 1.7em;
+            text-align: justify;
+            height: auto;
+            overflow: hidden;
+        }
+        .movie-group{
+            display: grid;
+            grid-template-columns: auto auto auto;
+            text-align: center;
+        }
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 1; 
+            padding-top: 100px; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            overflow: auto; 
+            background-color: rgb(0,0,0); 
+            background-color: rgba(0,0,0,0.4); 
+          }
+          .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+          }
+          
+          
+          .close {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+          }
+          
+          .close:hover,
+          .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+          }
+
+          .movie-description {
+            font-size: 13px;
+            font-family: sans-serif;
+            line-height: 1.7em;
+            text-align: justify;
+            height: auto;
+            overflow: hidden;
+        }
+        
+        @media screen and (max-width: 700px) {
+            .movie-group{
+                display: grid;
+                grid-template-columns: auto;
+                text-align: center;
+            }
+        
+        }
+        
+        @media (min-width: 701px) and (max-width: 1020px) {
+            .movie-group{
+                display: grid;
+                grid-template-columns: auto auto;
+                text-align: center;
+                
+            }
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="search">
+            <form action="">
+                <label for="">Cari Judul</label>
+                <input type="text" style="margin-left: 1%; width: 70%; height: 30px; margin-right:0">
+                <button class="search-button">Cari</button>
+            </form>
+        </div>
+        <div class="content">
+            <div class="header">Daftar Movie</div>
+            <div class="movie-group" id="isi">
+                
+            </div>
+        </div>
+        <!-- <div style="clear: both;">
+            copyright@yobong2020
+        </div> -->
+    </div>
+
+    <!-- modal -->
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <img src="" id="gambar"  alt="" style="height: 100%;">
+          <h2 id="judul" class="movie-title"></h2>
+          <p id="deskripsi" class='movie-description'></p>
+        </div>
+      </div>
+    <script src="js/main.js"></script>
+</body>
+</html>
